@@ -34,19 +34,20 @@ public class Card implements Comparable {
         String value_str;
         String suit_str;
 
-        switch (value) {
-            case 10:
-                value_str = "Jack";
-            case 11:
-                value_str = "Queen";
-            case 12:
-                value_str = "King";
-            case 13:
-                value_str = "Ace";
-            default:
-                value_str = Integer.toString(value);
+        // Generate string for suit
+        if (value==10){
+            value_str="Jack";
+        }else if (value==11){
+            value_str="Queen";
+        }else if(value==12){
+            value_str="King";
+        }else if (value==13){
+            value_str="Ace";
+        }else{
+            value_str = Integer.toString(value);
         }
 
+        // Generate string for suit
         if (suit == 1) {
             suit_str = "Clubs";
         } else if (suit == 2) {

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d302e795-841f-4f6c-a9fc-31c45cb65edc" name="Changes" comment="Overrided equals method">
+    <list default="true" id="d302e795-841f-4f6c-a9fc-31c45cb65edc" name="Changes" comment="Implement compareTo() method">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Card.java" afterDir="false" />
     </list>
@@ -34,6 +34,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "OverrideImplement.generate.javadoc": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
@@ -92,7 +93,14 @@
       <option name="project" value="LOCAL" />
       <updated>1652888347661</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Implement compareTo() method">
+      <created>1652888767757</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1652888767757</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -110,6 +118,7 @@
     <MESSAGE value="Amended README.md file" />
     <MESSAGE value="Created Card class and generateDeck() method" />
     <MESSAGE value="Overrided equals method" />
-    <option name="LAST_COMMIT_MESSAGE" value="Overrided equals method" />
+    <MESSAGE value="Implement compareTo() method" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implement compareTo() method" />
   </component>
 </project>
