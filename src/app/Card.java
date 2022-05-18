@@ -20,6 +20,16 @@ public class Card {
     }
 
     @Override
+    public boolean equals(Object other) {
+        if (!(other instanceof Card)) {
+            return false;
+        } else {
+            Card other_card = (Card) other;
+            return this.value == other_card.value;
+        }
+    }
+
+    @Override
     public String toString() {
         String value_str;
         String suit_str;
