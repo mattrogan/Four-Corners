@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d302e795-841f-4f6c-a9fc-31c45cb65edc" name="Changes" comment="Created Card class and generateDeck() method">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/Card.java" afterDir="false" />
+    <list default="true" id="d302e795-841f-4f6c-a9fc-31c45cb65edc" name="Changes" comment="Overrided equals method">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Card.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,7 +78,21 @@
       <option name="project" value="LOCAL" />
       <updated>1652875406851</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Created Card class and generateDeck() method">
+      <created>1652888103001</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1652888103002</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Overrided equals method">
+      <created>1652888347661</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1652888347661</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -97,6 +109,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Amended README.md file" />
     <MESSAGE value="Created Card class and generateDeck() method" />
-    <option name="LAST_COMMIT_MESSAGE" value="Created Card class and generateDeck() method" />
+    <MESSAGE value="Overrided equals method" />
+    <option name="LAST_COMMIT_MESSAGE" value="Overrided equals method" />
   </component>
 </project>

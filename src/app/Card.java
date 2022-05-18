@@ -2,7 +2,7 @@ package app;
 
 import java.util.*;
 
-public class Card {
+public class Card implements Comparable {
 
     public static ArrayList<Card> deck = new ArrayList<Card>();
 
@@ -76,4 +76,18 @@ public class Card {
         generateDeck();
     }
 
+
+    /**
+     * @param o the object to be compared.
+     * @return a negative integer, zero, or a positive integer as this object is less than, equal to, or greater than the specified object.
+     */
+    @Override
+    public int compareTo(Object o) {
+        if (!(o instanceof Card)){
+            throw new ClassCastException("can only compare Card objects to other cards");
+        } else {
+            Card other = (Card) o;
+            return Integer.compare(value, other.value);
+        }
+    }
 }
