@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d302e795-841f-4f6c-a9fc-31c45cb65edc" name="Changes" comment="Amended README.md file">
+    <list default="true" id="d302e795-841f-4f6c-a9fc-31c45cb65edc" name="Changes" comment="Implement compareTo() method">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Card.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,6 +26,7 @@
   <component name="ProjectId" id="29KwiIYeDe44Mkpn0utFOIevSEb" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="false" id="Update" />
+    <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -32,13 +34,23 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "OverrideImplement.generate.javadoc": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true"
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "settings.editor.selected.configurable": "preferences.lookFeel"
   }
 }]]></component>
-  <component name="RunManager">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Main" />
+  <component name="RunManager" selected="Application.app.Main">
+    <configuration name="app.Card" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="app.Card" />
+      <module name="4Corners" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="app.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="app.Main" />
       <module name="4Corners" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -46,7 +58,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.app.Main" />
+        <item itemvalue="Application.app.Card" />
       </list>
     </recent_temporary>
   </component>
@@ -66,7 +79,28 @@
       <option name="project" value="LOCAL" />
       <updated>1652875406851</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Created Card class and generateDeck() method">
+      <created>1652888103001</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1652888103002</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Overrided equals method">
+      <created>1652888347661</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1652888347661</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Implement compareTo() method">
+      <created>1652888767757</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1652888767757</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -82,6 +116,9 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Amended README.md file" />
-    <option name="LAST_COMMIT_MESSAGE" value="Amended README.md file" />
+    <MESSAGE value="Created Card class and generateDeck() method" />
+    <MESSAGE value="Overrided equals method" />
+    <MESSAGE value="Implement compareTo() method" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implement compareTo() method" />
   </component>
 </project>
