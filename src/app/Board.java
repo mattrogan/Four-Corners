@@ -9,10 +9,15 @@ public class Board
 
     Card[][] positions = new Card[4][4];
 
+    /**
+     * Constructs an object containing the game board
+     */
     public Board(){}
 
+
     /**
-     * @param deck Deck of cards to place from
+     * Generates the initial four corners of the game state
+     * @param deck The deck of cards to draw the corner pieces from
      */
     public void placeInitialCards(ArrayList<Card> deck){
         positions[0][0] = deck.remove(0);
@@ -25,6 +30,13 @@ public class Board
         return Objects.isNull(positions[row][col]);
     }
 
+    /**
+     * Places a card on the game board.
+     * @param card The card to be placed
+     * @param row The row (0-3) where the card goes
+     * @param col The column (0-3) where the card goes
+     * @throws IllegalArgumentException if the position provided is either invalid or already occupied
+     */
     public void place(Card card, int row, int col) throws IllegalArgumentException{
         if (!(isFree(row,col))) {
             System.out.println("Couldn't place " + card + " at row="+row +", col=" + col);
@@ -37,8 +49,7 @@ public class Board
             try{
                 positions[row][col] = card;
             } catch (IndexOutOfBoundsException ex) {
-
-                throw ex;
+                System.out.println("Couldn't place card here (exception thrown");
             }
         }
     }
@@ -46,15 +57,15 @@ public class Board
     @Override
     public String toString()
     {
-        String returnStr = "";
+        StringBuilder returnStr = new StringBuilder();
 
         for (int row = 0; row < 4; row++)
         {
-                returnStr += Arrays.deepToString(positions[row]) + "\n";
+            returnStr.append(Arrays.deepToString(positions[row])).append("\n");
 
         }
 
-        return returnStr;
+        return returnStr.toString();
     }
 
 }
