@@ -33,8 +33,6 @@ public class Main {
         Board gameBoard = new Board();
         gameBoard.placeInitialCards(deck);
 
-        System.out.println("Current state of board...");
-        System.out.println(gameBoard);
 
     }
 }

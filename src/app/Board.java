@@ -2,6 +2,7 @@ package app;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Objects;
 
 public class Board
 {
@@ -20,10 +21,12 @@ public class Board
         positions[3][3] = deck.remove(0);
     }
 
-    public boolean isOccupied(int row, int col) { return (positions[row][col] == null); }
+    public boolean isFree(int row, int col) {
+        return Objects.isNull(positions[row][col]);
+    }
 
     public void place(Card card, int row, int col) throws IllegalArgumentException{
-        if (isOccupied(row, col)) {
+        if (!(isFree(row,col))) {
             System.out.println("Couldn't place " + card + " at row="+row +", col=" + col);
             throw new IndexOutOfBoundsException();
         } else if (!(0 <= row && row <= 3)) {
