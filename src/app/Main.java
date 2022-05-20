@@ -3,9 +3,6 @@ package app;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-import static app.Card.deck;
-import static app.Card.generateDeck;
-
 public class Main {
     static ArrayList<Card> deck = new ArrayList<Card>();
 
