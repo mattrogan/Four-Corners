@@ -55,7 +55,7 @@ public class Card implements Comparable {
         } else if (suit == 3) {
             suit_str = "Hearts";
         } else {
-            suit_str = "Clubs";
+            suit_str = "Spades";
         }
 
         return value_str + " of " + suit_str;
@@ -73,12 +73,8 @@ public class Card implements Comparable {
         }
     }
 
-    public static void main(String[] args) {
-        generateDeck();
-    }
-
-
     /**
+     * Compare a Card to another object
      * @param o the object to be compared.
      * @return a negative integer, zero, or a positive integer as this object is less than, equal to, or greater than the specified object.
      */
