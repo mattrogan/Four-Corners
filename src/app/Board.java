@@ -17,26 +17,33 @@ public class Board
     public Board() { }
 
     public void placeInitialCards(ArrayList<Card> deck) {
+        // Place corner cards
         for (int row = 0; row < 4; row++) {
             for (int col = 0; col < 4; col++) {
                 Card cardToPlace;
                 if (row == 0 && col == 0 || row == 0 && col == 3 || row == 3 && col == 0 || row == 3 && col == 3) {
                     cardToPlace = deck.remove(0);
-                    place(cardToPlace, row, col);
                 } else {
                     cardToPlace = EMPTY_CARD;
                 }
                 positions[row][col] = cardToPlace; // Place manually to avoid exception handling
             }
         }
+
+        // Activate surrounding places
+        revise();
     }
 
+    /** Predicate method to check whether a space on the board is free
+     * @param row Row of position to check
+     * @param col Column of position to check
+     * @return true if the position is free, false otherwise
+     */
     public boolean isFree(int row, int col) {
-        if (Objects.isNull(positions[row][col])){
-            positions[row][col] = EMPTY_CARD;
-            return true;
+        if (positions[row][col] != null && positions[row][col].isEmptyCard()) {
+            return ((EmptyCard) positions[row][col]).isPlaceable();
         } else {
-            return positions[row][col].isEmptyCard();
+            return false;
         }
     }
 
@@ -63,7 +70,6 @@ public class Board
             }
         }
     }
-
 
     public void display()
     {

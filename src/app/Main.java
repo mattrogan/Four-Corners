@@ -49,7 +49,7 @@ public class Main {
             System.out.print("Enter the column (0-3) to place the next card: ");
             col = input.nextInt();
 
-            try{
+            try {
                 Card nextCard = deck.remove(0);
                 gameBoard.place(nextCard, row, col);
             } catch (IndexOutOfBoundsException ex) {
