@@ -4,8 +4,6 @@ import java.util.*;
 
 public class Card implements Comparable {
 
-    public static ArrayList<Card> deck = new ArrayList<Card>();
-
     int value, suit;
 
     /**
@@ -61,17 +59,6 @@ public class Card implements Comparable {
         return value_str + " of " + suit_str;
     }
 
-    /**
-     * Method to generate the deck of cards
-     */
-    public static void generateDeck() {
-        for (int i = 1; i <= 4; i++) {
-            for (int j = 1; j <= 13; j++) {
-                Card c = new Card(j,i);        // Create new card
-                deck.add(c);                    // Add card to the deck
-            }
-        }
-    }
 
     /**
      * Compare a Card to another object
