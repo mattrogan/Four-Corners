@@ -31,6 +31,11 @@ public class Card implements Comparable {
         }
     }
 
+    /** Predicate method to check if a card is the empty card
+     * @return true if card is an EmptyCard instance, false otherwise
+     */
+    public boolean isEmptyCard() { return false; }
+
     @Override
     public String toString() {
         String value_str;
@@ -96,5 +101,8 @@ class EmptyCard extends Card {
     public String toString() {
         return "EMPTY";
     }
+
+    @Override
+    public boolean isEmptyCard() { return true; }
 
 }

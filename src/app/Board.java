@@ -59,7 +59,7 @@ public class Board
                 } else {
                     cardToPlace = EMPTY_CARD;
                 }
-                positions[row][col] = cardToPlace;
+                positions[row][col] = cardToPlace; // Place manually to avoid exception handling
             }
         }
     }
