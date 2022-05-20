@@ -1,9 +1,9 @@
 package app;
 
-import java.security.spec.InvalidParameterSpecException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.Scanner;
 
 public class Main {
     static ArrayList<Card> deck = new ArrayList<Card>();
@@ -33,7 +33,31 @@ public class Main {
         Board gameBoard = new Board();
         gameBoard.placeInitialCards(deck);
 
-        System.out.println(gameBoard);
+
+
+        // Set up scanner
+        Scanner input = new Scanner(System.in);
+
+        // Gameplay
+        while (true)
+        {
+            gameBoard.display();
+
+            int row, col;
+            System.out.print("Enter the row (0-3) to place the next card: ");
+            row = input.nextInt();
+            System.out.print("Enter the column (0-3) to place the next card: ");
+            col = input.nextInt();
+
+            try{
+                Card nextCard = deck.remove(0);
+                gameBoard.place(nextCard, row, col);
+            } catch (IndexOutOfBoundsException ex) {
+                System.out.println("Couldn't place card. Try again");
+            }
+
+
+        }
 
     }
 }

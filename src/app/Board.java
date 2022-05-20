@@ -12,11 +12,32 @@ public class Board
 
     /**
      * Constructs an object containing the game board
+     * @param deck The deck of cards to draw the corner pieces from
      */
-    public Board() {}
+    public Board() { }
+
+    public void placeInitialCards(ArrayList<Card> deck) {
+        for (int row = 0; row < 4; row++) {
+            for (int col = 0; col < 4; col++) {
+                Card cardToPlace;
+                if (row == 0 && col == 0 || row == 0 && col == 3 || row == 3 && col == 0 || row == 3 && col == 3) {
+                    cardToPlace = deck.remove(0);
+                    place(cardToPlace, row, col);
+                } else {
+                    cardToPlace = EMPTY_CARD;
+                }
+                positions[row][col] = cardToPlace; // Place manually to avoid exception handling
+            }
+        }
+    }
 
     public boolean isFree(int row, int col) {
-        return Objects.isNull(positions[row][col]);
+        if (Objects.isNull(positions[row][col])){
+            positions[row][col] = EMPTY_CARD;
+            return true;
+        } else {
+            return positions[row][col].isEmptyCard();
+        }
     }
 
     /**
@@ -28,12 +49,12 @@ public class Board
      */
     public void place(Card card, int row, int col) throws IllegalArgumentException{
         if (!(isFree(row,col))) {
-            System.out.println("Couldn't place " + card + " at row="+row +", col=" + col);
+            System.out.println("row="+row +", col=" + col +" is not empty");
             throw new IndexOutOfBoundsException();
         } else if (!(0 <= row && row <= 3)) {
-            throw new IllegalArgumentException("cannot place card at row="+row);
+            throw new IllegalArgumentException("cannot place a card at row="+row);
         } else if (!(0 <= col && col <= 3)) {
-            throw new IllegalArgumentException("cannot place card at col="+row);
+            throw new IllegalArgumentException("cannot place a card at col="+row);
         } else {
             try{
                 positions[row][col] = card;
@@ -43,25 +64,10 @@ public class Board
         }
     }
 
-    /**
-     * Generates the initial four corners of the game state
-     * @param deck The deck of cards to draw the corner pieces from
-     */
-    public void placeInitialCards(ArrayList<Card> deck){
-        for (int row = 0; row < 4; row++)
-        {
-            for (int col = 0; col < 4; col++)
-            {
-                Card cardToPlace;
-                if (row==0&&col==0 || row==0&&col==3 || row==3&&col==0 || row==3&&col==3) {
-                    cardToPlace = deck.remove(0);
-                    place(cardToPlace, row, col);
-                } else {
-                    cardToPlace = EMPTY_CARD;
-                }
-                positions[row][col] = cardToPlace; // Place manually to avoid exception handling
-            }
-        }
+
+    public void display()
+    {
+        System.out.println("The current state of the game board is...\n"+toString());
     }
 
     @Override
