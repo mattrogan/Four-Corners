@@ -33,6 +33,5 @@ public class Main {
         Board gameBoard = new Board();
         gameBoard.placeInitialCards(deck);
 
-
     }
 }

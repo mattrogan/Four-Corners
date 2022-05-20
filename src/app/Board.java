@@ -14,18 +14,6 @@ public class Board
      */
     public Board(){}
 
-
-    /**
-     * Generates the initial four corners of the game state
-     * @param deck The deck of cards to draw the corner pieces from
-     */
-    public void placeInitialCards(ArrayList<Card> deck){
-        positions[0][0] = deck.remove(0);
-        positions[0][3] = deck.remove(0);
-        positions[3][0] = deck.remove(0);
-        positions[3][3] = deck.remove(0);
-    }
-
     public boolean isFree(int row, int col) {
         return Objects.isNull(positions[row][col]);
     }
@@ -50,6 +38,25 @@ public class Board
                 positions[row][col] = card;
             } catch (IndexOutOfBoundsException ex) {
                 System.out.println("Couldn't place card here (exception thrown");
+            }
+        }
+    }
+
+    /**
+     * Generates the initial four corners of the game state
+     * @param deck The deck of cards to draw the corner pieces from
+     */
+    public void placeInitialCards(ArrayList<Card> deck){
+        ArrayList<Integer> corners = new ArrayList<Integer>();
+        corners.add(0);
+        corners.add(3);
+
+        for (int row : corners)
+        {
+            for (int col : corners)
+            {
+                Card cardToPlace = deck.remove(0);
+                place(cardToPlace, row, col);
             }
         }
     }
