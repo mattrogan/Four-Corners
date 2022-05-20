@@ -8,11 +8,12 @@ public class Board
 {
 
     Card[][] positions = new Card[4][4];
+    final EmptyCard EMPTY_CARD = new EmptyCard();
 
     /**
      * Constructs an object containing the game board
      */
-    public Board(){}
+    public Board() {}
 
     public boolean isFree(int row, int col) {
         return Objects.isNull(positions[row][col]);
@@ -47,16 +48,18 @@ public class Board
      * @param deck The deck of cards to draw the corner pieces from
      */
     public void placeInitialCards(ArrayList<Card> deck){
-        ArrayList<Integer> corners = new ArrayList<Integer>();
-        corners.add(0);
-        corners.add(3);
-
-        for (int row : corners)
+        for (int row = 0; row < 4; row++)
         {
-            for (int col : corners)
+            for (int col = 0; col < 4; col++)
             {
-                Card cardToPlace = deck.remove(0);
-                place(cardToPlace, row, col);
+                Card cardToPlace;
+                if (row==0&&col==0 || row==0&&col==3 || row==3&&col==0 || row==3&&col==3) {
+                    cardToPlace = deck.remove(0);
+                    place(cardToPlace, row, col);
+                } else {
+                    cardToPlace = EMPTY_CARD;
+                }
+                positions[row][col] = cardToPlace;
             }
         }
     }

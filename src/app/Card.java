@@ -17,6 +17,10 @@ public class Card implements Comparable {
         this.suit = suit;
     }
 
+    public Card() {}
+
+
+
     @Override
     public boolean equals(Object other) {
         if (!(other instanceof Card)) {
@@ -74,4 +78,23 @@ public class Card implements Comparable {
             return Integer.compare(value, other.value);
         }
     }
+}
+
+class EmptyCard extends Card {
+
+    /**
+     * An EmptyCard is a special type of card
+     * used to denote empty spaces on the game
+     * board
+     */
+
+    public EmptyCard() {
+        this.value = 0;
+        this.suit = 0;
+    }
+
+    public String toString() {
+        return "EMPTY";
+    }
+
 }
