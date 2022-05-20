@@ -27,5 +27,9 @@ public class Main {
         // Generate deck of cards
         generateDeck();
 
+        // Generate board
+        Board gameBoard = new Board();
+        gameBoard.placeInitialCards(deck);
+
     }
 }
