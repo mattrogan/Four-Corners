@@ -20,6 +20,26 @@ public class Board
         positions[3][3] = deck.remove(0);
     }
 
+    public boolean isOccupied(int row, int col) { return (positions[row][col] == null); }
+
+    public void place(Card card, int row, int col) throws IllegalArgumentException{
+        if (isOccupied(row, col)) {
+            System.out.println("Couldn't place " + card + " at row="+row +", col=" + col);
+            throw new IndexOutOfBoundsException();
+        } else if (!(0 <= row && row <= 3)) {
+            throw new IllegalArgumentException("cannot place card at row="+row);
+        } else if (!(0 <= col && col <= 3)) {
+            throw new IllegalArgumentException("cannot place card at col="+row);
+        } else {
+            try{
+                positions[row][col] = card;
+            } catch (IndexOutOfBoundsException ex) {
+
+                throw ex;
+            }
+        }
+    }
+
     @Override
     public String toString()
     {

@@ -1,5 +1,6 @@
 package app;
 
+import java.security.spec.InvalidParameterSpecException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -13,7 +14,7 @@ public class Main {
      */
     public static void generateDeck() {
         for (int i = 1; i <= 4; i++) {
-            for (int j = 1; j <= 13; j++) {
+            for (int j = 2; j <= 13; j++) {
                 Card c = new Card(j,i);        // Create new card
                 deck.add(c);                    // Add card to the deck
             }
@@ -22,6 +23,7 @@ public class Main {
         // Shuffle the deck
         Collections.shuffle(deck);
     }
+
     public static void main(String[] args) {
 
         // Generate deck of cards
@@ -30,6 +32,9 @@ public class Main {
         // Generate board
         Board gameBoard = new Board();
         gameBoard.placeInitialCards(deck);
+
+        System.out.println("Current state of board...");
+        System.out.println(gameBoard);
 
     }
 }
