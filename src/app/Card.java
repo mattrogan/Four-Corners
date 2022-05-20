@@ -93,10 +93,22 @@ class EmptyCard extends Card {
      * board
      */
 
+    boolean placeable;
+
     public EmptyCard() {
         this.value = 0;
         this.suit = 0;
     }
+
+    /** Predicate method to check if a card can be placed at the current position
+     * @return true if a card can be placed in this empty position, false otherwise
+     */
+    public boolean isPlaceable() { return placeable; }
+
+    /**
+     * Make the current space "active" i.e. it can be replaced with a card
+     */
+    public void activateSpace()  { placeable = true; }
 
     public String toString() {
         return "   ";
