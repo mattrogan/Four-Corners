@@ -56,7 +56,6 @@ public class Main {
                 System.out.println("Couldn't place card. Try again");
             }
 
-
         }
 
     }

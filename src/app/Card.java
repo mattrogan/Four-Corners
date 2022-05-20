@@ -43,29 +43,29 @@ public class Card implements Comparable {
 
         // Generate string for suit
         if (value==10){
-            value_str="Jack";
+            value_str=" J";
         }else if (value==11){
-            value_str="Queen";
+            value_str=" Q";
         }else if(value==12){
-            value_str="King";
+            value_str=" K";
         }else if (value==13){
-            value_str="Ace";
+            value_str=" A";
         }else{
-            value_str = Integer.toString(value);
+            value_str = " " + Integer.toString(value);
         }
 
         // Generate string for suit
         if (suit == 1) {
-            suit_str = "Clubs";
+            suit_str = "♣";
         } else if (suit == 2) {
-            suit_str = "Diamonds";
+            suit_str = "♦";
         } else if (suit == 3) {
-            suit_str = "Hearts";
+            suit_str = "♥";
         } else {
-            suit_str = "Spades";
+            suit_str = "♠";
         }
 
-        return value_str + " of " + suit_str;
+        return value_str + suit_str;
     }
 
 
@@ -99,7 +99,7 @@ class EmptyCard extends Card {
     }
 
     public String toString() {
-        return "EMPTY";
+        return "   ";
     }
 
     @Override
