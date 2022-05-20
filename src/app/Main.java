@@ -2,6 +2,7 @@ package app;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 
 public class Main {
     static ArrayList<Card> deck = new ArrayList<Card>();
@@ -17,10 +18,14 @@ public class Main {
                 deck.add(c);                    // Add card to the deck
             }
         }
+
+        // Shuffle the deck
+        Collections.shuffle(deck);
     }
     public static void main(String[] args) {
 
         // Generate deck of cards
         generateDeck();
+
     }
 }
