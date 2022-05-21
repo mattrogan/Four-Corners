@@ -8,6 +8,7 @@ public class Board
 
     Card[][] positions = new Card[4][4];
     final EmptyCard EMPTY_CARD = new EmptyCard();
+    EmptyCard ACTIVATED_CARD = new EmptyCard();
 
     /**
      * Constructs an object containing the game board
@@ -99,6 +100,24 @@ public class Board
      * @return true if revision successful, false otherwise
      */
     public boolean reviseIndividualSpace(int row, int col) {
+        ArrayList<Integer> neighbours = new ArrayList<Integer>();
+        neighbours.add(-1); neighbours.add(0); neighbours.add(1);
+
+        for (int i : neighbours)
+        {
+            for (int j : neighbours)
+            {
+                int rowToActivate = row + i;
+                int colToActivate = col + j;
+                if (rowToActivate>=0 && rowToActivate<=3 && colToActivate>=0 && colToActivate<=3 && i!=j && i!=-j && -i!=j) {
+                    // Activate card at position [rowToActivate][colToActivate]
+                    EmptyCard activatedCard = new EmptyCard();
+                    activatedCard.activateSpace();
+                    positions[rowToActivate][colToActivate] = activatedCard;
+                }
+            }
+        }
+
         return true;
     }
 
