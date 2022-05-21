@@ -2,7 +2,6 @@ package app;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Objects;
 
 public class Board
 {
@@ -12,7 +11,6 @@ public class Board
 
     /**
      * Constructs an object containing the game board
-     * @param deck The deck of cards to draw the corner pieces from
      */
     public Board() { }
 
@@ -70,6 +68,41 @@ public class Board
             }
         }
     }
+
+    /** Gets the card at the position (row, col) of the board
+     * @param row The row of the card to get
+     * @param col The column of the card to get
+     * @return The card at (row, col)
+     */
+    public Card get(int row, int col) { return positions[row][col]; }
+
+    /** Method to revise the state of the board
+     *
+     * @return true if revision successful, false otherwise
+     */
+    public boolean revise() {
+        // Iterate through each space on the board
+        for (int row = 0; row < 4; row++) {
+            for (int col = 0; col < 4; col++) {
+                Card c = get(row, col);
+                if (!(c.isEmptyCard())) {
+                    reviseIndividualSpace(row, col);
+                }
+            }
+        }
+        return true;
+    }
+
+    /** Revise the neighbours of an individual space
+     * @param row Row of space to revise
+     * @param col Column of space to revise
+     * @return true if revision successful, false otherwise
+     */
+    public boolean reviseIndividualSpace(int row, int col) {
+        return true;
+    }
+
+
 
     public void display()
     {

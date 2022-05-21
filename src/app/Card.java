@@ -111,7 +111,11 @@ class EmptyCard extends Card {
     public void activateSpace()  { placeable = true; }
 
     public String toString() {
-        return "   ";
+        if (this.isPlaceable()){
+            return "***";
+        } else {
+            return "   ";
+        }
     }
 
     @Override
