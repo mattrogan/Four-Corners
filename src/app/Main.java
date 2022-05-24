@@ -53,12 +53,11 @@ public class Main {
                 System.out.println("Couldn't place card. Try again");
             }
 
-            System.out.print("Enter Q to quit, any key to continue: ");
+            System.out.println("Enter Q to quit, any key to continue: ");
             String choice = input.nextLine();
+
             if (choice == "Q") {
                 break;
-            } else {
-                continue;
             }
 
         }
