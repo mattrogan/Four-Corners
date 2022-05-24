@@ -10,10 +10,19 @@ public class Board
     final EmptyCard EMPTY_CARD = new EmptyCard();
     EmptyCard ACTIVATED_CARD = new EmptyCard();
 
+    ArrayList<Integer> neighbours;
+
+    
+
     /**
      * Constructs an object containing the game board
      */
-    public Board() { }
+    public Board() { 
+        // Add integer list to contain neighbours
+        // that can be used across the board
+        neighbours = new ArrayList<Integer>();
+        neighbours.add(-1); neighbours.add(0); neighbours.add(1);
+    }
 
     public void placeInitialCards(ArrayList<Card> deck) {
         // Place corner cards
@@ -68,6 +77,13 @@ public class Board
                 System.out.println("Couldn't place card here (exception thrown");
             }
         }
+
+        ArrayList<Card> adjacentCards = getAdjacentCards(row, col);
+        System.out.println("Cards adjacent to " + row + ", " + col);
+        for (Card c : adjacentCards){
+            System.out.println(c);
+        }
+
     }
 
     /** Gets the card at the position (row, col) of the board
@@ -100,9 +116,6 @@ public class Board
      * @return true if revision successful, false otherwise
      */
     public boolean reviseIndividualSpace(int row, int col) {
-        ArrayList<Integer> neighbours = new ArrayList<Integer>();
-        neighbours.add(-1); neighbours.add(0); neighbours.add(1);
-
         for (int i : neighbours)
         {
             for (int j : neighbours)
@@ -126,6 +139,32 @@ public class Board
     public void display()
     {
         System.out.println("The current state of the game board is...\n"+toString());
+    }
+
+    /**
+     * Get cards adjacent to the current card at (row, col)
+     * @param row The row of the card to check
+     * @param col The column of the card to check
+     * @return List of cards adjacent to the current card
+     */
+    public ArrayList<Card> getAdjacentCards(int row, int col) {
+        ArrayList<Card> adjacents = new ArrayList<Card>();
+
+        for (int i : neighbours)
+        {
+            for (int j : neighbours)
+            {
+                int rowToAdd = row + i;
+                int colToAdd = col + j;
+                if (rowToAdd>=0 && rowToAdd<=3 && colToAdd>=0 && colToAdd<=3 && i!=j && i!=-j && -i!=j) {
+                    // Check if the position contains a card
+                    if (positions[rowToAdd][colToAdd] instanceof Card){
+                        adjacents.add(positions[rowToAdd][colToAdd]);
+                    }
+                }
+            }
+        }
+        return adjacents;
     }
 
     @Override
