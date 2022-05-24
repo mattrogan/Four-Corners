@@ -55,7 +55,7 @@ public class Board
      */
     public void place(Card card, int row, int col) throws IllegalArgumentException{
         if (!(isFree(row,col))) {
-            System.out.println("row="+row +", col=" + col +" is not empty");
+            System.out.println("A card cannot be placed at row="+row +", col=" + col);
             throw new IndexOutOfBoundsException();
         } else if (!(0 <= row && row <= 3)) {
             throw new IllegalArgumentException("cannot place a card at row="+row);

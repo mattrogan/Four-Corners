@@ -1,13 +1,11 @@
 package app;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.Scanner;
 
 public class Main {
     static ArrayList<Card> deck = new ArrayList<Card>();
-
 
     /**
      * Method to generate the deck of cards
@@ -16,7 +14,7 @@ public class Main {
         for (int i = 1; i <= 4; i++) {
             for (int j = 2; j <= 13; j++) {
                 Card c = new Card(j,i);        // Create new card
-                deck.add(c);                    // Add card to the deck
+                deck.add(c);                   // Add card to the deck
             }
         }
 
