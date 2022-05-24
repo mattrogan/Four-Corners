@@ -32,7 +32,6 @@ public class Main {
         gameBoard.placeInitialCards(deck);
 
 
-
         // Set up scanner
         Scanner input = new Scanner(System.in);
 
@@ -54,7 +53,17 @@ public class Main {
                 System.out.println("Couldn't place card. Try again");
             }
 
+            System.out.print("Enter Q to quit, any key to continue: ");
+            String choice = input.nextLine();
+            if (choice == "Q") {
+                break;
+            } else {
+                continue;
+            }
+
         }
+
+        input.close();
 
     }
 }
