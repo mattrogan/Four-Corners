@@ -35,8 +35,10 @@ public class Main {
         // Set up scanner
         Scanner input = new Scanner(System.in);
 
+        String choice = "";
+
         // Gameplay
-        while (true)
+        while (choice != "Q")
         {
             gameBoard.display();
 
@@ -54,11 +56,7 @@ public class Main {
             }
 
             System.out.println("Enter Q to quit, any key to continue: ");
-            String choice = input.nextLine();
-
-            if (choice == "Q") {
-                break;
-            }
+            choice = input.nextLine();
 
         }
 
