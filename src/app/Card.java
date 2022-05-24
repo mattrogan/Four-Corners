@@ -1,7 +1,5 @@
 package app;
 
-import java.util.*;
-
 public class Card implements Comparable {
 
     int value, suit;
@@ -18,8 +16,6 @@ public class Card implements Comparable {
     }
 
     public Card() {}
-
-
 
     @Override
     public boolean equals(Object other) {
