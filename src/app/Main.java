@@ -40,6 +40,9 @@ public class Main {
         // Gameplay
         while (choice != "Q")
         {
+            System.out.println("Enter Q to quit, any key to continue: ");
+            choice = input.nextLine();
+
             gameBoard.display();
 
             int row, col;
@@ -54,9 +57,6 @@ public class Main {
             } catch (IndexOutOfBoundsException ex) {
                 System.out.println("Couldn't place card. Try again");
             }
-
-            System.out.println("Enter Q to quit, any key to continue: ");
-            choice = input.nextLine();
 
         }
 
