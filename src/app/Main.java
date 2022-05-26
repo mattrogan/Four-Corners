@@ -31,10 +31,10 @@ public class Main {
         Board gameBoard = new Board();
         gameBoard.placeInitialCards(deck);
 
-
         // Set up scanner
         Scanner input = new Scanner(System.in);
 
+        //[TODO] Modify the conditional statement to break when user wants to stop
         String choice = "";
 
         // Gameplay
@@ -55,6 +55,9 @@ public class Main {
             } catch (IndexOutOfBoundsException ex) {
                 System.out.println("Couldn't place card. Try again");
             }
+
+            // [TODO] Add code to ask for higher/lower
+            // [TODO] Add method to compare cards and print outcome
 
         }
 
