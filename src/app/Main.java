@@ -40,8 +40,6 @@ public class Main {
         // Gameplay
         while (choice != "Q")
         {
-            System.out.println("Enter Q to quit, any key to continue: ");
-            choice = input.nextLine();
 
             gameBoard.display();
 
